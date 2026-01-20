@@ -1,0 +1,277 @@
+/* --- Base Variables --- */
+:root {
+  --primary-color: #0B5CA8; /* Deep Trust Blue */
+  --primary-dark: #084a8c;
+  --accent-color: #e6f0fa;
+  --text-color: #333;
+  --white: #ffffff;
+  --header-height: 80px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Main Header Structure --- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--white);
+  height: var(--header-height);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Add shadow when scrolling */
+.header.scrolled {
+  box-shadow: var(--shadow);
+  height: 70px; /* Slightly smaller on scroll */
+}
+
+.header-container {
+  max-width: 1280px;
+  width: 100%; /* CHANGED: Ensures it fits mobile screens perfectly */
+  padding: 0 20px; /* ADDED: Prevents logo from touching the edge */
+  box-sizing: border-box; /* ADDED: calculation safety */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo --- */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* --- Desktop Navigation --- */
+.desktop-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centers links */
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect (Underline) - KEPT ORIGINAL */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Active Link State */
+.nav-links a.active-link {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.nav-links a.active-link::after {
+  width: 100%;
+}
+
+/* --- Action Button (Request Quote) --- */
+.btn-quote {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-quote:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(11, 92, 168, 0.2);
+}
+
+/* --- Mobile Menu Toggle (Hamburger) --- */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+/* Animate Hamburger to X */
+.hamburger.open { background-color: transparent; }
+.hamburger.open::before { transform: rotate(45deg); top: 0; }
+.hamburger.open::after { transform: rotate(-45deg); top: 0; }
+
+/* --- Mobile Navigation Drawer --- */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 1001;
+}
+
+.mobile-nav-overlay.show { display: block; }
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -280px; /* Hidden by default */
+  width: 280px;
+  height: 100vh;
+  background-color: var(--white);
+  z-index: 1002;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.mobile-nav.open {
+  right: 0; /* Slide in */
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.mobile-logo {
+  font-weight: 800;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.mobile-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.mobile-links a.active {
+  color: var(--primary-color);
+}
+
+.btn-quote-mobile {
+  background-color: var(--primary-color);
+  color: var(--white) !important;
+  text-align: center;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* --- Responsive Media Queries --- */
+/* CHANGED: Increased to 1024px so tablets get the hamburger menu */
+@media (max-width: 1024px) {
+  .desktop-nav, .header-actions {
+    display: none; /* Hide desktop nav */
+  }
+
+  .mobile-toggle {
+    display: block; /* Show hamburger */
+  }
+}
+
+
+/* Find the .logo class and UPDATE it to be a container */
+.logo {
+  display: flex; /* Ensures image centers vertically */
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Add this new class for the image itself */
+.logo-image {
+  height: 50px; /* Adjust this to match your header height */
+  width: auto;  /* Maintains aspect ratio */
+  object-fit: contain;
+}

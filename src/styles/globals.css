@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-blue: #0B5CA8;
+  --secondary-blue: #4DA0F7;
+  --text-dark: #333333;
+  --white: #FFFFFF;
+  --gray-bg: #F4F4F4;
+}
+
+/* --- THE FIX IS HERE --- */
+* {
+  box-sizing: border-box; /* Ensures padding doesn't expand width */
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* This hides the "extra" content on the right */
+  font-family: 'Inter', sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}

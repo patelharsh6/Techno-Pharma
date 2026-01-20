@@ -1,0 +1,188 @@
+/* --- Variables --- */
+:root {
+  --footer-bg: #0f172a; /* Dark Navy Blue (Professional) */
+  --footer-text: #94a3b8; /* Soft Slate Grey */
+  --footer-title: #f8fafc; /* White/Off-White */
+  --accent-blue: #38bdf8; /* Bright Sky Blue for Hovers */
+}
+
+/* --- Main Footer Layout --- */
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding-top: 80px;
+  margin-top: auto; /* Pushes footer to bottom */
+  font-family: 'Inter', sans-serif;
+  border-top: 4px solid var(--accent-blue); /* Top accent bar */
+}
+
+.footer-container {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  /* Smart Grid: 4 columns on desktop, auto-fits on smaller screens */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 60px 40px; /* 60px vertical gap, 40px horizontal gap */
+  padding-bottom: 60px;
+}
+
+/* --- Brand Column --- */
+.brand-col {
+  max-width: 320px;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--footer-title);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.footer-desc {
+  line-height: 1.7;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* --- Headings --- */
+.footer-col h3 {
+  color: var(--footer-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline effect for headings */
+.footer-col h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-blue);
+  border-radius: 2px;
+}
+
+/* --- Links Styling & Hover Effects --- */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--footer-text);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block; /* Required for transform */
+}
+
+/* HOVER EFFECT: Slide Right + Light Up */
+.footer-links a:hover {
+  color: var(--accent-blue);
+  transform: translateX(6px); /* Slides 6px to the right */
+}
+
+/* --- Contact Section --- */
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.contact-list .icon {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.phone-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-list a {
+  text-decoration: none;
+  color: var(--footer-text);
+  transition: color 0.2s;
+}
+
+.contact-list a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-blue);
+}
+
+/* --- Footer Bottom (Copyright) --- */
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.2); /* Slightly darker */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 25px 0;
+}
+
+.footer-bottom-content {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Spreads content apart */
+  align-items: center;
+  flex-wrap: wrap; /* Wraps on mobile */
+  gap: 20px;
+  font-size: 0.85rem;
+}
+
+.legal-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.legal-links a {
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.legal-links a:hover {
+  color: var(--accent-blue);
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Stack everything in 1 column */
+    gap: 40px;
+  }
+
+  .footer-logo, .footer-col h3 {
+    text-align: left; /* Keep left alignment for readability */
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
