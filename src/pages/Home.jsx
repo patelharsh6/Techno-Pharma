@@ -17,7 +17,7 @@ const Home = () => {
         {/* 1. The Video Element */}
         <video className="hero-video" autoPlay loop muted playsInline>
   <source 
-    src="/public/assets/downloads/bgvideo.mp4"
+    src="/assets/downloads/bgvideo.mp4"
     type="video/mp4" 
   />
 </video>
