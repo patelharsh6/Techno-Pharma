@@ -60,7 +60,6 @@ const Footer = () => {
               <span className="icon">📞</span>
               <div className="phone-group">
                 <a href="tel:+919426447900">+91 9426447900</a>
-                <a href="tel:+919624631633">+91 9624631633</a>
               </div>
             </li>
             <li>

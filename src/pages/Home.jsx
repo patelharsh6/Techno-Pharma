@@ -16,15 +16,12 @@ const Home = () => {
         
         {/* 1. The Video Element */}
         <video className="hero-video" autoPlay loop muted playsInline>
-          {/* This is a free stock video of a pharma production line. 
-              You can replace this URL with your own local file later. */}
-          <source 
-            src="/../public/assets/WhatsApp Video 2026-01-06 at 11.12.25 AM (1).mp4" 
-            // https://cdn.pixabay.com/video/2016/08/22/4746-179738669_large.mp4
-            type="video/mp4" 
-          />
-          Your browser does not support the video tag.
-        </video>
+  <source 
+    src="/assets/downloads/bgvideo.mp4"
+    type="video/mp4" 
+  />
+</video>
+
 
         {/* 2. Dark Overlay (Crucial for text readability) */}
         <div className="hero-overlay"></div>
