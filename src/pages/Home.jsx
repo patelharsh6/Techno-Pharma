@@ -17,7 +17,7 @@ const Home = () => {
         {/* 1. The Video Element */}
         <video className="hero-video" autoPlay loop muted playsInline>
   <source 
-    src="/assets/downloads/bgvideo.mp4"
+    src="/public/assets/downloads/bgvideo.mp4"
     type="video/mp4" 
   />
 </video>
@@ -52,11 +52,11 @@ const Home = () => {
       <section className="stats-bar">
         <div className="container stats-grid">
           <div className="stat-item">
-            <span className="stat-number">15+</span>
+            <span className="stat-number">20+</span>
             <span className="stat-label">Years Experience</span>
           </div>
           <div className="stat-item">
-            <span className="stat-number">500+</span>
+            <span className="stat-number">1000+</span>
             <span className="stat-label">Machines Installed</span>
           </div>
           <div className="stat-item">

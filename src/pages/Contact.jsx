@@ -43,8 +43,7 @@ const Contact = () => {
               <Phone className="c-icon" size={24} />
               <div>
                 <h3>Phone Numbers</h3>
-                <p><a href="tel:+919426447900">+91 9426447900</a></p>
-                <p><a href="tel:+919624631633">+91 9624631633</a></p>
+                <p><a href="tel:+919328058223">+91 9328058223</a></p>
               </div>
             </div>
 
@@ -52,7 +51,7 @@ const Contact = () => {
               <Mail className="c-icon" size={24} />
               <div>
                 <h3>Email Us</h3>
-                <p><a href="mailto:technopharma96@gmail.com">technopharma96@gmail.com</a></p>
+                <p><a href="mailto:technopharmaeng@gmail.com">technopharmaeng@gmail.com</a></p>
               </div>
             </div>
 
@@ -79,7 +78,7 @@ const Contact = () => {
               
               {/* WhatsApp Button */}
               <a 
-                href="https://wa.me/919426447900?text=Hi,%20I%20am%20interested%20in%20your%20machinery." 
+                href="https://wa.me/919328058223?text=Hi,%20I%20am%20interested%20in%20your%20machinery." 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="action-card whatsapp"
@@ -96,7 +95,7 @@ const Contact = () => {
 
               {/* Email Button */}
               <a 
-                href="mailto:technopharma96@gmail.com?subject=Inquiry%20for%20Pharma%20Machinery" 
+                href="mailto:technopharmaeng@gmail.com?subject=Inquiry%20for%20Pharma%20Machinery" 
                 className="action-card email"
               >
                 <div className="icon-box blue">
@@ -110,13 +109,13 @@ const Contact = () => {
               </a>
 
               {/* Call Button */}
-              <a href="tel:+919426447900" className="action-card phone">
+              <a href="tel:+919328058223" className="action-card phone">
                 <div className="icon-box dark">
                   <Smartphone size={32} />
                 </div>
                 <div>
                   <h3>Call Sales Directly</h3>
-                  <p>+91 9426447900</p>
+                  <p>+91 9328058223</p>
                 </div>
                 <ArrowRight className="arrow-icon" />
               </a>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight, Smartphone } from 'lucide-react';
 import './Footer.css'; // Importing the new CSS
 
 const Footer = () => {
@@ -49,7 +50,7 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <ul className="contact-list">
             <li>
-              <span className="icon">📍</span>
+              <span className="icon"><MapPin className="c-icon" size={24} /></span>
               <span>
                 23, Shivbhumi-4, Near Shahitya Hub,<br/>
                 Kujad-Gatrad Road, Bakrol,<br/>
@@ -57,14 +58,14 @@ const Footer = () => {
               </span>
             </li>
             <li>
-              <span className="icon">📞</span>
+              <span className="icon"><Phone className="c-icon" size={24} /></span>
               <div className="phone-group">
-                <a href="tel:+919426447900">+91 9426447900</a>
+                <a href="tel:+919328058223">+91 9328058223</a>
               </div>
             </li>
             <li>
-              <span className="icon">✉️</span>
-              <a href="mailto:technopharma96@gmail.com">technopharma96@gmail.com</a>
+              <span className="icon"><Mail className="c-icon" size={24} /></span>
+              <a href="mailto:technopharmaeng@gmail.com">technopharmaeng@gmail.com</a>
             </li>
           </ul>
         </div>

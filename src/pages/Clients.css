@@ -1,120 +1,149 @@
 /* --- Global --- */
 .clients-page {
-  background-color: #f8fafc;
+  background-color: #ffffff;
   min-height: 100vh;
 }
 
-/* --- Hero Section --- */
-.clients-hero {
-  background: #0B5CA8; /* Brand Blue */
-  color: white;
-  padding: 80px 0 100px 0;
-  text-align: center;
+/* --- Hero Section (Blue Strip + Badge) --- */
+.clients-hero-wrapper {
   position: relative;
-  overflow: hidden;
+  margin-bottom: 80px; /* Space for the badge to hang down */
 }
 
-/* Adds a subtle pattern to hero background */
-.clients-hero::before {
-  content: '';
+.clients-hero-strip {
+  background-color: #0B5CA8; /* The Main Blue Bar */
+  height: 120px;
+  width: 100%;
+  border-bottom: 5px solid #084a8c;
+}
+
+.hero-badge-container {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-  opacity: 0.5;
+  top: 50%; /* Center vertically relative to strip */
+  left: 50%;
+  transform: translate(-50%, -20%); /* Pull it down slightly */
+  z-index: 10;
 }
 
-.hero-badge-light {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 20px;
+.techno-badge {
+  width: 180px;
+  height: 180px;
+  background: white;
+  border-radius: 50%; /* Circle fallback */
+  /* If you want a Hexagon shape via CSS, let me know! */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #38bdf8; /* Cyan Border */
+  overflow: hidden;
+  background-color: #0B5CA8; /* Blue background inside */
 }
 
-.clients-hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 15px;
+.badge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.clients-hero p {
-  font-size: 1.2rem;
+.badge-text-fallback {
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.b-title {
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.b-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
   color: #e0f2fe;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 /* --- Client Grid --- */
 .client-grid-section {
-  margin-top: -60px; /* Overlap effect */
-  position: relative;
-  z-index: 2;
-  padding-bottom: 80px;
+  padding: 40px 0 80px 0;
 }
 
 .client-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
 }
 
 .client-card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
   transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: white;
 }
 
 .client-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  border-color: #bfdbfe;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-color: #38bdf8;
 }
 
-/* Logo Placeholder Circle */
+/* Logo Area */
+.logo-area {
+  height: 120px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.client-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Initials Fallback */
 .logo-placeholder {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: #f0f9ff;
   color: #0B5CA8;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  border: 2px solid white;
-  box-shadow: 0 4px 10px rgba(11, 92, 168, 0.1);
+  font-size: 1.5rem;
+  border: 2px solid #e0f2fe;
 }
 
-.client-card h3 {
-  font-size: 1.1rem;
-  color: #1e293b;
+.client-info {
+  padding: 15px;
+  text-align: center;
+  background: #fcfcfc;
+}
+
+.client-info h3 {
+  font-size: 1rem;
+  color: #333;
   margin-bottom: 5px;
 }
 
 .client-loc {
-  font-size: 0.85rem;
-  color: #94a3b8;
-  font-weight: 500;
+  font-size: 0.8rem;
+  color: #64748b;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 /* --- Trust Section --- */
 .trust-section {
   padding: 80px 0;
-  background: white;
+  background-color: #f8fafc;
 }
 
 .mx-auto { margin-left: auto; margin-right: auto; }
@@ -122,80 +151,78 @@
 .trust-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 30px;
   margin-top: 50px;
 }
 
 .trust-item {
   text-align: center;
-  padding: 20px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.trust-icon {
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: #e0f2fe;
   color: #0B5CA8;
-  margin-bottom: 20px;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .trust-item h3 {
-  font-size: 1.25rem;
   margin-bottom: 10px;
-  color: #1e293b;
-}
-
-.trust-item p {
-  color: #64748b;
-  line-height: 1.6;
+  font-size: 1.2rem;
 }
 
 /* --- Join CTA --- */
 .join-cta {
-  background: #1e293b; /* Dark Navy */
+  padding: 80px 0;
+  background: white;
+}
+
+.cta-content-box {
+  background: #1e293b;
   color: white;
   text-align: center;
-  padding: 80px 0;
-}
-
-.join-cta h2 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-}
-
-.join-cta p {
-  color: #94a3b8;
-  margin-bottom: 30px;
-  font-size: 1.1rem;
+  padding: 50px;
+  border-radius: 20px;
 }
 
 .btn-join {
-  background: #38bdf8; /* Cyan */
-  color: #0f172a;
-  padding: 14px 32px;
-  border-radius: 6px;
-  font-weight: 700;
-  text-decoration: none;
   display: inline-block;
-  transition: transform 0.2s, background 0.3s;
+  background: #38bdf8;
+  color: #0f172a;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: transform 0.2s;
 }
 
 .btn-join:hover {
-  background: white;
   transform: scale(1.05);
+  background: white;
 }
 
-/* --- Responsive --- */
-@media (max-width: 968px) {
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
   .trust-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
   
-  .client-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  .techno-badge {
+    width: 140px;
+    height: 140px;
   }
   
-  .logo-placeholder {
-    width: 60px;
-    height: 60px;
-    font-size: 1.2rem;
+  .clients-hero-strip {
+    height: 100px;
   }
 }
